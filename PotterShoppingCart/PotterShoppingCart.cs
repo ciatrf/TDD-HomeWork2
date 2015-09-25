@@ -13,11 +13,19 @@ namespace PotterShoppingCart
             Decimal summaryPrice;
             var bookCount = products.Count();
             summaryPrice = products.Sum(x => x.Price);
-            decimal disCount = 0.95m;
-            if (bookCount == 2) 
+            switch (bookCount)
             {
-                summaryPrice = summaryPrice * disCount;
+                case 2:
+                    summaryPrice = summaryPrice * 0.95m;
+                    break;
+                case 3:
+                    summaryPrice = summaryPrice * 0.9m;
+                    break;
+                case 1:
+                default:
+                    break;
             }
+            
             
             return summaryPrice;
         }

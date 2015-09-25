@@ -46,7 +46,7 @@ namespace PotterShoppingCart.Tests
         }
 
         [TestMethod()]
-        public void 一二三集各買了一本_價格應為100X3X09_回傳270)
+        public void 一二三集各買了一本_價格應為100X3X09_回傳270()
         {
             //arrange
             var cart = new PotterShoppingCart();
