@@ -21,6 +21,9 @@ namespace PotterShoppingCart
                 case 3:
                     summaryPrice = summaryPrice * 0.9m;
                     break;
+                case 4:
+                    summaryPrice = summaryPrice * 0.8m;
+                    break;
                 case 1:
                 default:
                     break;
