@@ -10,11 +10,15 @@ namespace PotterShoppingCart
     {
         public Decimal CalculatePrice(IEnumerable<PotterBook> products) 
         {
-            Decimal summaryPrice = 0;
-            foreach (var item in products)
+            Decimal summaryPrice;
+            var bookCount = products.Count();
+            summaryPrice = products.Sum(x => x.Price);
+            decimal disCount = 0.95m;
+            if (bookCount == 2) 
             {
-                summaryPrice += item.Price;
+                summaryPrice = summaryPrice * disCount;
             }
+            
             return summaryPrice;
         }
     }
@@ -24,6 +28,8 @@ namespace PotterShoppingCart
         public String Name { get; set; }
 
         public Decimal Price { get; set; }
+
+        public int 集數 { get; set; }
  
     }
 }
